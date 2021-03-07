@@ -1,0 +1,29 @@
+.movie-details-form {
+  display: flex;
+  margin: 1rem 0.5rem;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-details-form > .MuiTextField-root {
+  flex: 1;
+  width: 800px;
+  max-width: 95vw;
+}
+
+.movie-details-form > .MuiTextField-root > * {
+  border: 1px solid #ccc;
+}
+
+.movie-details-form > .MuiButtonGroup-root > * {
+  margin-top: 1rem;
+}
+
+.movie-details-form > .MuiTextField-root > label {
+  border: none;
+}
+
+.movie-details-form > .MuiTextField-root > .MuiFormHelperText-root {
+  border: none;
+}

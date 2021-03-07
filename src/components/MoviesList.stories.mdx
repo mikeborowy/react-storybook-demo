@@ -1,0 +1,55 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { MemoryRouter } from "react-router-dom";
+
+import MoviesList from './MoviesList'
+import {movies} from './movies'
+
+<Meta 
+  title="Organisms/MoviesList" 
+  component={MoviesList} 
+  decorators={[(storyFn) => <MemoryRouter>{storyFn()}</MemoryRouter>]}
+/>
+
+# Stories for the MoviesList component
+
+*The component to display a list of movies in cards.*
+
+Usage: 
+```jsx
+<MoviesList movies={ movies } loading={ loading } error={ error } />
+```
+
+## Loading state
+
+While the data is still loading you will see a progress indicator. 
+As we can't tell how long the AJAX request will take there is no percentage here.
+
+<Preview>
+  <Story name="While loading">
+    <MoviesList loading={ true } />
+  </Story>
+</Preview>
+
+## Error state
+
+If an error occurs during the AJAX request the message will be displayed.
+
+<Preview>
+  <Story name="With error">
+    <MoviesList error={{ message: "There was an error loading movies" }} />
+  </Story>
+</Preview>
+
+## Normal state
+
+If the AJAX request returned a collection of movies these will be displayed in 
+cards. Each card will have the image title, overview and the backdrop image. 
+It will also display a **Learn more** button.
+
+<Preview>
+  <Story name="With movies">
+    <MoviesList movies={ movies } />
+  </Story>
+</Preview>
+
+![Random kitten](http://www.randomkittengenerator.com/cats/rotator.php)
